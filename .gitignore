@@ -1,0 +1,10 @@
+# Ignore Terraform directories
+.terraform/
+
+# Ignore other unnecessary folders
+.idea/
+node_modules/
+build/
+dist/
+*.log
+
