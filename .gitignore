@@ -1,0 +1,35 @@
+# Ignore Terraform directories
+.terraform/
+
+# Ignore other unnecessary folders
+.idea/
+node_modules/
+build/
+dist/
+*.log
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+.terraform/
+.terraform.lock.hcl
+
+# Local .terraform directories
+terraform.tfstate*
+.terraform/
+
+# IDE and editor specific files
+*.swp
+*.swo
+*.DS_Store
+.idea/
+.vscode/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
