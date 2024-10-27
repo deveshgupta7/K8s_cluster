@@ -78,7 +78,7 @@ resource "aws_key_pair" "my_key" {
   public_key = file("${local.name_prefix}.pub")
 }
 
-# Security Group
+# Security Group 1
 resource "aws_security_group" "my_sg" {
   name        = "allow_ssh_http_https_sql"
   description = "Allow SSH, HTTP, HTTPS, and SQL inbound traffic"
