@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1  # You can adjust this based on your needs
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      imagePullSecrets:
+      - name: ecr-secret
+      containers:
+      - name: mysql
+        image: 681863550751.dkr.ecr.us-east-1.amazonaws.com/assignment2-dev-ecr:my_db
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "pw"  # Use quotes for better compatibility
+        - name: MYSQL_DATABASE
+          value: "employees"  # Specify your default database name
+        volumeMounts:
+        - name: mysql-storage
+          mountPath: /var/lib/mysql  # Persist MySQL data
+      volumes:
+      - name: mysql-storage
+        emptyDir: {}  # Use an emptyDir for temporary storage; replace with a PersistentVolume for production
