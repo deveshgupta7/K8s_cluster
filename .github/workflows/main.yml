@@ -54,9 +54,15 @@ jobs:
         IMAGE_TAG: v0.1
       run: |
         # Tag and push MySQL image to ECR
-        docker tag my_db $ECR_REGISTRY/$ECR_REPOSITORY:my_db
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_db
+        docker tag my_db $ECR_REGISTRY/$ECR_REPOSITORY:my_db-v1
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_db-v1
+        
+        docker tag my_db $ECR_REGISTRY/$ECR_REPOSITORY:my_db-v2
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_db-v2
 
         # Tag and push application image to ECR
-        docker tag my_app $ECR_REGISTRY/$ECR_REPOSITORY:my_app
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_app
+        docker tag my_app $ECR_REGISTRY/$ECR_REPOSITORY:my_app-v1
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_app-v1
+
+        docker tag my_app $ECR_REGISTRY/$ECR_REPOSITORY:my_app-v2
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:my_app-v2
