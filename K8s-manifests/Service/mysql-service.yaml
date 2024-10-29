@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  type: ClusterIP  # Default type; suitable for internal communication
+  type: ClusterIP 
   ports:
   - port: 3306
     targetPort: 3306
   selector:
-    app: mysql  # This should match the labels in your MySQL Deployment
+    app: mysql  
