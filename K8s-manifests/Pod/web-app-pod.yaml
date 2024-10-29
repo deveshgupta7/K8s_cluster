@@ -9,17 +9,17 @@ spec:
   - name: web-app
     image: 681863550751.dkr.ecr.us-east-1.amazonaws.com/assignment2-dev-ecr:my_app
     ports:
-    - containerPort: 80  # Change this to the port your app listens on
+    - containerPort: 80  
     env:
     - name: DBHOST
-      value: "mysql"  # Use the service name for the MySQL database
+      value: "mysql"  
     - name: DBPORT
-      value: "3306"  # Set this to the port your MySQL is listening on
+      value: "3306" 
     - name: DBUSER
-      value: "root"  # Your DB user
+      value: "root"  
     - name: DBPWD
-      value: "pw"  # Your DB password
+      value: ${{ secrets.MYSQL_ROOT_PASSWORD }}
     - name: DATABASE
-      value: "employees"  # Your database name
+      value: "employees"  
     - name: APP_COLOR
-      value: "blue"  # Any additional config you need
+      value: "blue"  
