@@ -23,7 +23,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: ${{ secrets.MYSQL_ROOT_PASSWORD }}
         - name: MYSQL_DATABASE
-          value: "employees"  # Specify your default database name
+          value: "employees"  
         volumeMounts:
         - name: mysql-storage
           mountPath: /var/lib/mysql  # Persist MySQL data
