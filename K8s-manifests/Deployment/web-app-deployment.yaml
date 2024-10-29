@@ -29,6 +29,6 @@ spec:
         - name: DBPWD
           value: ${{ secrets.MYSQL_ROOT_PASSWORD }}
         - name: DATABASE
-          value: "employees"  # Your database name
+          value: "employees" 
         - name: APP_COLOR
-          value: "blue"  # Any additional config you need
+          value: "blue"  
