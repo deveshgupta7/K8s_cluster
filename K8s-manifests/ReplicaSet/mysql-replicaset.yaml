@@ -21,4 +21,4 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: mypassword@1234  # Change this to a strong password
+          value: ${{ secrets.MYSQL_ROOT_PASSWORD }}
