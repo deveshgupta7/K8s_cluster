@@ -12,12 +12,12 @@ spec:
     - containerPort: 3306
     env:
     - name: MYSQL_ROOT_PASSWORD
-      value: "pw"  # Use quotes for better compatibility
+      value: ${{ secrets.MYSQL_ROOT_PASSWORD }}
     - name: MYSQL_DATABASE
-      value: "employees"  # Specify your default database name
+      value: "employees"  
     volumeMounts:
     - name: mysql-storage
-      mountPath: /var/lib/mysql  # Path to persist MySQL data
+      mountPath: /var/lib/mysql  
   volumes:
   - name: mysql-storage
-    emptyDir: {}  # Temporary storage; consider using a PersistentVolume in production
+    emptyDir: {}
